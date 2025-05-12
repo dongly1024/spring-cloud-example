@@ -1,4 +1,15 @@
 package top.keir.order.feign;
 
-public class ProductApi {
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+
+@FeignClient(name = "product-service")
+public interface ProductApi {
+
+    @GetMapping(value = "/all")
+    ResponseEntity<List<String>> all();
+
 }

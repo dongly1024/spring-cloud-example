@@ -1,9 +1,6 @@
-## 整合nacos、gateway、feign
-### 配置中心配置
-#### order服务
-文件名：order-service.yaml
-```yaml
 spring:
+  application:
+    name: product-service
   cloud:
     nacos:
       discovery:
@@ -12,7 +9,4 @@ spring:
         password: 123456
         namespace: a993f4ef-e2af-4b78-9364-5c19bf945bab
 server:
-  port: 9010
-order:
-  test: 这是测试内容111
-```
+  port: 9020
