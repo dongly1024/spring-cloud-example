@@ -30,6 +30,7 @@ ext {
 }
 
 dependencies {
+    implementation('top.keir:service-api:1.0')
     implementation('org.apache.dubbo:dubbo-spring-boot-starter:3.3.4')
     implementation('org.apache.dubbo:dubbo-nacos-spring-boot-starter:3.3.4')
     implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2023.0.3.2') {

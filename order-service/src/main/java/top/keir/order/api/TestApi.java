@@ -1,8 +1,6 @@
 package top.keir.order.api;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import top.keir.order.config.OrderProperties;
 import top.keir.order.dubbo.DubboConsumer;
 import top.keir.order.feign.ProductApi;
+import top.keir.service.product.Product;
 
 import java.util.List;
 
@@ -22,23 +21,24 @@ import java.util.List;
 @RestController
 public record TestApi(ProductApi productApi, OrderProperties properties, DubboConsumer consumer) {
 
-    @GetMapping(value = "/all")
-    public ResponseEntity<List<String>> all() {
-        log.info("consumer:{}", consumer.testService.sayHello("keir"));
-        log.info("test：{}", properties.getTest());
-        ResponseEntity<List<String>> all = productApi.all();
-        log.info("order-service: {}", all.getBody());
-        return all;
+    @GetMapping(value = "/feign/all")
+    public ResponseEntity<List<Product>> feignAll() {
+        return productApi.all();
     }
 
-    @GetMapping(value = "/say")
-    public ResponseEntity<List<String>> say(@RequestParam(value = "name") String name) {
-        log.info("say name:{}", name);
-        String say1 = consumer.testService.sayHello(name);
-        String sa2 = consumer.test2Service.sayHello(name);
-        List<String> list = List.of(say1, sa2);
-        log.info("say name: {}", list);
-        return ResponseEntity.ok(list);
+    @GetMapping(value = "/feign/getByCode")
+    public ResponseEntity<Product> feignGetByCode(@RequestParam(value = "code") String code) {
+        return productApi.getByCode(code);
+    }
+
+    @GetMapping(value = "/dubbo/all")
+    public ResponseEntity<List<Product>> all() {
+        return ResponseEntity.ok(consumer.productService.all());
+    }
+
+    @GetMapping(value = "/dubbo/getByCode")
+    public ResponseEntity<Product> getByCode(@RequestParam(value = "code") String code) {
+        return ResponseEntity.ok(consumer.productService.getByCode(code));
     }
 
 

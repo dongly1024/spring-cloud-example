@@ -30,7 +30,7 @@ ext {
 }
 
 dependencies {
-    implementation('top.keir:service-api:0.0.1-SNAPSHOT')
+    implementation('top.keir:service-api:1.0')
     implementation('org.apache.dubbo:dubbo-spring-boot-starter:3.3.4')
     implementation('org.apache.dubbo:dubbo-nacos-spring-boot-starter:3.3.4') {
         exclude(group: 'com.alibaba.nacos', module: 'nacos-client')
