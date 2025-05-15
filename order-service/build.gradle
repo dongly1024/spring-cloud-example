@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
@@ -31,6 +31,7 @@ ext {
 
 dependencies {
     implementation('top.keir:service-api:1.0')
+    implementation('com.alibaba.fastjson2:fastjson2:2.0.57')
     implementation('org.apache.dubbo:dubbo-spring-boot-starter:3.3.4')
     implementation('org.apache.dubbo:dubbo-nacos-spring-boot-starter:3.3.4')
     implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2023.0.3.2') {

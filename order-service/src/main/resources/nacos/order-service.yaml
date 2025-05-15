@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.13:8848
+        username: nacos
+        password: 123456
+server:
+  port: 9010
+order:
+  test: 这是测试内容111
+dubbo:
+  application:
+    name: order-dubbo-service
+    qos-enable: false
+  registry:
+    address: nacos://${nacos.address:192.168.1.13}:8848?username=nacos&password=123456
+    register-mode: instance
+  protocol:
+    name: tri
+    port: -1
+desc: 这是order-service.yaml配置文件

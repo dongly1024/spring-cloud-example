@@ -1,11 +1,19 @@
 package top.keir.service.product;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.io.Serializable;
+
 /**
  * 商品信息
- *
- * @param productCode 商品编号
- * @param productName 商品名称
- * @param productDesc 商品描述
  */
-public record Product(String productCode, String productName, String productDesc) {
+@Data
+@AllArgsConstructor
+public class Product implements Serializable {
+
+    private String productCode;
+    private String productName;
+    private String productDesc;
+
 }

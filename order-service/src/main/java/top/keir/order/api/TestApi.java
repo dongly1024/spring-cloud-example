@@ -32,13 +32,13 @@ public record TestApi(ProductApi productApi, OrderProperties properties, DubboCo
     }
 
     @GetMapping(value = "/dubbo/all")
-    public ResponseEntity<List<Product>> all() {
-        return ResponseEntity.ok(consumer.productService.all());
+    public List<Product> all() {
+        return consumer.productService.all();
     }
 
     @GetMapping(value = "/dubbo/getByCode")
-    public ResponseEntity<Product> getByCode(@RequestParam(value = "code") String code) {
-        return ResponseEntity.ok(consumer.productService.getByCode(code));
+    public Product getByCode(@RequestParam(value = "code") String code) {
+        return consumer.productService.getByCode(code);
     }
 
 

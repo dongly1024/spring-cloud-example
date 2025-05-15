@@ -1,0 +1,5 @@
+common:
+  testUserId: 10086
+  appKey: appKey1234567890
+  secretKey: e10d3dc95f9d4361472530a146020fa4
+desc: 这是common.yaml配置文件

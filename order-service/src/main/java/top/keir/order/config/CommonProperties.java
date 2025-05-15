@@ -11,10 +11,12 @@ import java.io.Serializable;
 @Data
 @RefreshScope
 @Component
-@ConfigurationProperties(prefix = "order")
-public class OrderProperties implements Serializable {
+@ConfigurationProperties(prefix = "common")
+public class CommonProperties implements Serializable {
 
-    private String test;
+    private String testUserId;
+    private String appKey;
+    private String secretKey;
     @Value("${desc}")
     private String desc;
 }

@@ -1,21 +1,15 @@
 spring:
   application:
     name: order-service
-  cloud:
-    nacos:
-      server-addr: ${nacos.address:192.168.1.13}:8848
-      username: nacos
-      password: 123456
   config:
     import:
-      - nacos:order-service.yaml?refresh=true
-dubbo:
-  application:
-    name: order-dubbo-service
-    qos-enable: false
-  registry:
-    address: nacos://${nacos.address:192.168.1.13}:8848?username=nacos&password=123456
-    register-mode: instance
-  protocol:
-    name: tri
-    port: -1
+      - nacos:mysql.yaml?group=DEFAULT_GROUP&refresh=true
+      - nacos:redis.yaml?group=DEFAULT_GROUP&refresh=true
+      - nacos:common.yaml?group=DEFAULT_GROUP&refresh=true
+      - nacos:order-service.yaml?group=DEFAULT_GROUP&refresh=true
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.address:192.168.1.13}:8848
+        username: nacos
+        password: 123456

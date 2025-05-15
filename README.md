@@ -1,9 +1,10 @@
 ## 介绍
 本项目主要是整合nacos、gateway、feign、dubbo
 ## 环境
-java: 17
-springboot: 3.4.5
-nacos: 2.5.1
+1. java: 21
+2. springboot: 3.4.5
+3. nacos: 2.5.1
+4. dubbo: 3.3.4
 ### 配置中心配置
 #### order服务
 文件名：order-service.yaml

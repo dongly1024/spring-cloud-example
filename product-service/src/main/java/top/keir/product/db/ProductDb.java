@@ -14,7 +14,7 @@ public interface ProductDb {
     );
 
     static Product getByCode(String code) {
-        return PRODUCTS.stream().filter(product -> product.productCode().equals(code)).findFirst().orElse(null);
+        return PRODUCTS.stream().filter(product -> product.getProductCode().equals(code)).findFirst().orElse(null);
     }
 
 }

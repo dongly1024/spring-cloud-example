@@ -1,0 +1,5 @@
+mysql:
+  host: 127.0.0.1
+  username: root
+  password: 123456
+desc: 这是mysql.yamll配置文件

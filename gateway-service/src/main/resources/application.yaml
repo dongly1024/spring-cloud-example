@@ -9,6 +9,5 @@ spring:
         server-addr: 192.168.1.13:8848
         username: nacos
         password: 123456
-        namespace: a993f4ef-e2af-4b78-9364-5c19bf945bab
 server:
   port: 9000

@@ -9,11 +9,9 @@ plugins {
 group = 'top.keir'
 version = '1.0'
 
-javadoc.options.encoding = 'UTF-8'
-
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
     withJavadocJar()
     withSourcesJar()

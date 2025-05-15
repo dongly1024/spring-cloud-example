@@ -11,10 +11,12 @@ import java.io.Serializable;
 @Data
 @RefreshScope
 @Component
-@ConfigurationProperties(prefix = "order")
-public class OrderProperties implements Serializable {
+@ConfigurationProperties(prefix = "mysql")
+public class MysqlProperties implements Serializable {
 
-    private String test;
+    private String host;
+    private String username;
+    private String password;
     @Value("${desc}")
     private String desc;
 }
