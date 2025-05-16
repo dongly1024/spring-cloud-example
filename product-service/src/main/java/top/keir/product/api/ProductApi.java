@@ -1,5 +1,6 @@
 package top.keir.product.api;
 
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 public class ProductApi {
     @GetMapping(value = "/all")
-    public ResponseEntity<List<Product>> all() {
+    public ResponseEntity<List<Product>> all(HttpServletRequest request) {
         log.info("获取商品列表");
         return ResponseEntity.ok(ProductDb.PRODUCTS);
     }

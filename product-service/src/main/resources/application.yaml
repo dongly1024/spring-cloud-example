@@ -4,12 +4,14 @@ spring:
   cloud:
     nacos:
       discovery:
+        enabled: false
         server-addr: ${nacos.address:192.168.1.13}:8848
         username: nacos
         password: 123456
 server:
   port: 9020
 dubbo:
+  enabled: false
   application:
     name: product-dubbo-service
     qos-enable: false

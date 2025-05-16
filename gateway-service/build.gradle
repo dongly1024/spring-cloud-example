@@ -30,6 +30,10 @@ ext {
 }
 
 dependencies {
+    implementation('org.redisson:redisson-spring-boot-starter:3.46.0')
+    implementation('org.dromara.hutool:hutool-all:6.0.0-M21')
+    implementation('com.alibaba.fastjson2:fastjson2:2.0.57')
+
     implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2023.0.3.2') {
         exclude(group: 'com.alibaba.nacos', module: 'nacos-client')
     }
